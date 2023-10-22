@@ -1,3 +1,5 @@
+-- вводная часть по докер
+
 docker stop - выключить контейнер
 docker kill - принудительное выключение контейнера
 docker run - запуск контейнера
@@ -13,3 +15,29 @@ docker run \
 -d \
 --rm \
 nginx
+
+--Dockerfile и работа с ним
+1. Внутри файла
+
+    FROM python:alpine          -- копировать базовый образ
+       
+    WORKDIR /app                -- установить рабочую дерикторию внутри образа
+       
+    COPY . .                    -- скопироть из нашей деректории в дерикторию внутри контейнера
+
+    CMD [ "python", "main.py" ] -- выполнить команду, где 1. кто выполняет  2.параметр, то есть что
+
+--Docker-compsoe
+Формат YAML
+СПИСОК:
+    fruits:
+        - banana
+        - apple
+        - orange
+СЛОВАРЬ:
+    pen:
+        color: yellow
+        model:
+            type: pen
+            material: plastic
+        price: 2
